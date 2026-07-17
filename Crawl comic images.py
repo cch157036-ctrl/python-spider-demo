@@ -78,34 +78,6 @@ for li in list(reversed(li_list[2:])):
                print(f"下载失败：{img_url},错误：{e}")
         #每下载一张，页码+1，这样下一张就是1.jpg 2.jpg....
         page+=1
-    #     # 使用 tqdm 显示进度条
-    #     for img in tqdm(imgs, total=len(imgs), desc=f"正在下载 {title}"):
-    #         img_url = img['image']
-    #
-    #         # 生成文件名 (例如: 0.jpg, 1.jpg)
-    #         file_path = os.path.join(folder_name, f"{page}.jpg")
-    #
-    #         # 【新增核心逻辑】检查文件是否已经存在
-    #         if os.path.exists(file_path):
-    #             # 如果文件已经在文件夹里了，就打印提示，并跳过这次循环
-    #             print(f"⏭️ 文件 {page}.jpg 已存在，跳过下载")
-    #             page += 1  # 别忘了让页码+1，否则下一张图的文件名会重叠！
-    #             continue  # continue 的意思是“立刻开始下一次循环”
-    #
-    #         try:
-    #             # 如果文件不存在，才执行下载
-    #             response = requests.get(img_url, timeout=10)
-    #
-    #             if response.status_code == 200:
-    #                 with open(file_path, 'wb') as f:
-    #                     f.write(response.content)
-    #
-    #         except Exception as e:
-    #             print(f"❌ 下载失败: {e}")
-    #
-    #         # 每次处理完一张图，页码都要加 1
-    #         page += 1
-    #
 
         #向图片网址发送请求，获取。content数据
         img_content=requests.get(img_url).content
